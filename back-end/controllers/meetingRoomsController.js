@@ -5,7 +5,7 @@ const {
     getAllMeetingRooms,
     getMeetingRoom,
     createMeetingRoom,
-} = require('..queries/meetingRooms.js');
+} = require('../queries/meetingRooms');
 
 meetingRooms.get('/', async (req, res) => {
     const allMeetingRooms = await getAllMeetingRooms();
@@ -40,3 +40,5 @@ meetingRooms.post('/', async (req, res) => {
         res.status(400).json({ payload: "Server Error. Could Not Create Room.", success: false });
     };
 });
+
+module.exports = meetingRooms;

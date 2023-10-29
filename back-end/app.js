@@ -6,6 +6,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const meetingRoomsController = require('./controllers/meetingRoomsController');
+app.use('/meeting-rooms', meetingRoomsController);
+
 app.get('/', (req, res) => {
     res.status(200).json({ data: 'Service is running.' });
 });

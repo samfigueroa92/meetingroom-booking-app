@@ -1,9 +1,7 @@
-DROP DATABASE IF EXISTS bookingApp;
-DROP TABLE IF EXISTS meetingRooms;
+DROP DATABASE IF EXISTS booking_app;
+CREATE DATABASE booking_app;
 
-CREATE DATABASE bookingApp;
-
-\c bookingApp;
+\c booking_app;
 
 CREATE TABLE meetingRooms (
     id SERIAL PRIMARY KEY,
@@ -17,7 +15,7 @@ CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
     meetingName TEXT,
     meetingRoomId INTEGER references meetingRooms(id),
-    startDate DATETIME,
-    endDate DATETIME,
-    attendees TEXT,
+    startDate DATE,
+    endDate DATE,
+    attendees TEXT
 );
