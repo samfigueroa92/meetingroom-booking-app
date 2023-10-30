@@ -13,9 +13,9 @@ CREATE TABLE meetingRooms (
 
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
-    meetingName TEXT,
-    meetingRoomId INTEGER references meetingRooms(id),
-    startDate DATE,
-    endDate DATE,
+    meeting_name TEXT,
+    meeting_room_id INTEGER references meetingRooms(id),
+    start_date DATE,
+    end_date DATE,
     attendees TEXT
 );

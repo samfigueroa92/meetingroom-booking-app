@@ -10,3 +10,6 @@ INSERT INTO meetingRooms ("id", "name", "capacity", "floor", "available") VALUES
 (7,'Meeting Room 7', 75, 29, 'true'),
 (8,'Meeting Room 8', 100, 15, 'true'),
 (9,'Meeting Room 9', 3, 22, 'true');
+
+INSERT INTO bookings ("id", "meeting_name", "meeting_room_id", "start_date", "end_date", "attendees") VALUES
+(1,'Testing Meeting', 2, '2024/01/05', '2024/01/05', 'samanthafigueroa@pursuit.org'); 
