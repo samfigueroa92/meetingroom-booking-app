@@ -1,0 +1,23 @@
+.MeetingRoom{
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.MeetingRoom-header{
+    font-size: 22px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.MeetingRoom-capacity{
+    font-size: 18px;
+    margin: 5px;
+}
+
+.MeetingRoom-floor{
+    font-size: 18px;
+    margin: 5px;
+
+}
