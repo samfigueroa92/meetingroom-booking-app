@@ -23,7 +23,7 @@ const MeetingRooms = () => {
 
     return (
         <div className='MeetingRooms'>
-            {meetingRooms.map(room => <MeetingRoom room={room} />)}
+            {meetingRooms.map(room => <MeetingRoom room={room} key={room.id} />)}
         </div>
     );
 };
