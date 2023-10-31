@@ -19,11 +19,11 @@ const getBooking = async (id) => {
 };
 
 const createBooking = async (booking) => {
-    const { id, meetingName, meetingRoomId, startDate, endDate, attendees } = booking;
+    const { id, meeting_name, meeting_room_id, start_date, end_date, attendees } = booking;
 
     try {
         const booking = await db.one('INSERT INTO bookings (id, meeting_name, meeting_room_id, start_date, end_date, attendees) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', [
-            id, meetingName, meetingRoomId, startDate, endDate, attendees
+            id, meeting_name, meeting_room_id, start_date, end_date, attendees
         ]);
         return booking;
 
