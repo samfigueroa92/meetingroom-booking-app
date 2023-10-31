@@ -35,10 +35,10 @@ bookings.post('/', async (req, res) => {
         if(createdBooking.id){
             res.status(200).json({ payload: createdBooking, success: true });
         }else{
-            res.status(422).json({ payload: "Error", success: false })
+            throw error;
         }
     } catch(err){
-        return err;
+        res.status(422).json({ payload: "Server Error. Could Not Create Booking.", success: false });
     };
 });
 

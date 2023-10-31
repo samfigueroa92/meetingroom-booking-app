@@ -37,7 +37,7 @@ meetingRooms.post('/', async (req, res) => {
             throw error;
         };
     } catch (err) {
-        res.status(400).json({ payload: "Server Error. Could Not Create Room.", success: false });
+        res.status(422).json({ payload: "Server Error. Could Not Create Room.", success: false });
     };
 });
 
