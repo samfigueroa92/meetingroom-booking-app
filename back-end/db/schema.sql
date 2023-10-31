@@ -8,7 +8,7 @@ CREATE TABLE meetingRooms (
     name TEXT,
     capacity INTEGER,
     floor INTEGER,
-    available BOOLEAN
+    available BOOLEAN default true
 );
 
 CREATE TABLE bookings (

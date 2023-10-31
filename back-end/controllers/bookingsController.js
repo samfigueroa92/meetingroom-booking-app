@@ -35,10 +35,20 @@ bookings.post('/', async (req, res) => {
         if(createdBooking.id){
             res.status(200).json({ payload: createdBooking, success: true });
         }else{
-            res.status(422).json({ payload: "Error", success: false })
+            throw error;
         }
     } catch(err){
-        return err;
+        res.status(422).json({ payload: "Server Error. Could Not Create Booking.", success: false });
+    };
+});
+
+bookings.delete('/:id', async (req, res) => {
+    const { id } = req.params;
+    const deletedBooking = await deleteBooking(id);
+    if(deletedBooking.id){
+        res.status(200).json({ payload: deletedBooking, success: true });
+    }else{
+        res.status(422).json({ payload:"Server Error. Could Not Delete Booking.", success: false });
     };
 });
 
