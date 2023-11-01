@@ -11,7 +11,11 @@ const NavBar = () => {
       <button className="NavBar-meetings">
         <a href="/meeting-rooms">Meeting Rooms</a>
       </button>
-      <button className="NavBar-bookings">Bookings</button>
+      <button className="NavBar-bookings">
+        <a href="/bookings"> 
+        Bookings
+        </a>
+        </button>
       <button className="NavBar-new">New Room</button>
     </div>
   );

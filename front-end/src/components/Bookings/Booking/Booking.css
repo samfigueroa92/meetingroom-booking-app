@@ -1,0 +1,45 @@
+.Booking{
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.Booking a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Booking a:link{
+    color:black
+}
+
+.Booking a:visited{
+    color:black
+}
+
+.Booking-name{
+    font-size: 30px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.Booking-room{
+    font-size: 18px;
+    margin: 5px;
+}
+
+.Booking-start{
+    font-size: 18px;
+    margin: 5px;
+}
+
+.Booking-end{
+    font-size: 18px;
+    margin: 5px;
+}
+
+.Booking-floor{
+    font-size: 18px;
+    margin: 5px;
+}

@@ -11,10 +11,12 @@ import BookingCard from "../BookingCard/BookingCard";
 
 const API = process.env.REACT_APP_API_URL;
 
-const MeetingRoomPage = () => {
+const MeetingRoomPage = ({ bookings }) => {
   const { id } = useParams();
   const [meetingRoom, setMeetingRoom] = useState({});
-  const [bookings, setBookings] = useState([]);
+  
+  const bookingsCopy = [...bookings];
+  const filteredBookings = bookingsCopy.filter(booking => booking.meeting_room_id === +id)
 
   const [newBooking, setNewBooking] = useState({
     meeting_name: "",
@@ -28,15 +30,6 @@ const MeetingRoomPage = () => {
     axios
       .get(`${API}/meeting-rooms/${id}`)
       .then((response) => setMeetingRoom(response.data.payload))
-      .catch((err) => console.error(err));
-
-    axios
-      .get(`${API}/bookings`)
-      .then((response) => {
-        const data = response.data.payload;
-        const filteredList = data.filter(booking => booking.meeting_room_id === +id);
-        setBookings(filteredList);
-    })
       .catch((err) => console.error(err));
   }, [id]);
 
@@ -90,8 +83,7 @@ const MeetingRoomPage = () => {
       </div>
       <div className="MeetingRoomPage-border"></div>
       <div className="MeetingRoomPage-bookings">
-        {bookings.length > 0 ? bookings.map(booking => <BookingCard booking={booking} key={booking.id} />) : <div className="No-Bookings">No bookings found for this room.</div>}
-
+        {filteredBookings.length > 0 ? filteredBookings.map(booking => <BookingCard booking={booking} key={booking.id} />) : <div className="No-Bookings">No bookings found for this room.</div>}
       </div>
     </div>
   );
