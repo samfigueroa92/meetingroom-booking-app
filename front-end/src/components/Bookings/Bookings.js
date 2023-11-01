@@ -1,10 +1,12 @@
-import Booking from "./Booking/Booking"
+import "./Bookings.css";
 
-const Bookings = () => {
+import Booking from "./Booking/Booking";
+
+const Bookings = ({ bookings, meetingRooms }) => {
+
     return (
-        <div>
-            Bookings
-            <Booking />
+        <div className="Bookings">
+            {bookings.map(booking => <Booking booking={booking} key={booking.id} meetingRooms={meetingRooms} />)}
         </div>
     );
 };
