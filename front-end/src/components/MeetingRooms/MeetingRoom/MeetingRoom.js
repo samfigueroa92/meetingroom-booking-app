@@ -8,9 +8,11 @@ const MeetingRoom = ({ room }) => {
 
   return (
     <div className="MeetingRoom">
+      <a href={`/meeting-rooms/${room.id}`}>
         <div className="MeetingRoom-header">{name}</div>
         <div className="MeetingRoom-capacity"> <GroupIcon/> Capacity: {capacity}</div>
         <div className="MeetingRoom-floor"> <BusinessIcon/> Floor: {floor}</div>
+      </a>
     </div>
   );
 };

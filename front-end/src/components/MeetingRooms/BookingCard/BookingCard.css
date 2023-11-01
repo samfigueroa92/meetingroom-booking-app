@@ -1,0 +1,13 @@
+.BookingCard{
+    width: 80%;
+    margin: 10px auto;
+    border: 2.5px solid rgb(88, 88, 88);
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.BookingCard-header{
+    font-size: 23px;
+    font-weight: 500;
+}

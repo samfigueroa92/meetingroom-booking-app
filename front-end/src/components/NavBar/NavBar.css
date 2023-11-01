@@ -4,3 +4,38 @@
    justify-content: center;
    margin: 20px;
 }
+
+.NavBar button{
+   font-size: 23px;
+   padding: 10px;
+   width: 20vw;
+   background-color: darkgrey;
+   cursor: pointer;
+}
+
+.NavBar a{
+   text-decoration: none;
+}
+
+.NavBar a:visited{
+   color: black;
+}
+
+.NavBar button:hover{
+   background-color: white;
+}
+
+.NavBar-meetings{
+   border-radius: 5px 0px 0px 5px;
+}
+
+.NavBar-bookings{
+   border-radius: 0px 0px 0px 0px;
+   border-left: none;
+   border-right: none;
+}
+
+.NavBar-new{
+   border-radius: 0px 5px 5px 0px;
+}
+

@@ -5,6 +5,19 @@
     padding: 10px;
 }
 
+.MeetingRoom a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.MeetingRoom a:link{
+    color:black
+}
+
+.MeetingRoom a:visited{
+    color:black
+}
+
 .MeetingRoom-header{
     font-size: 22px;
     font-weight: 500;
