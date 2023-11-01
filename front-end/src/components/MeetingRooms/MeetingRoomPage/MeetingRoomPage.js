@@ -16,6 +16,14 @@ const MeetingRoomPage = () => {
   const [meetingRoom, setMeetingRoom] = useState({});
   const [bookings, setBookings] = useState([]);
 
+  const [newBooking, setNewBooking] = useState({
+    meeting_name: "",
+    start_date: "",
+    end_date: "",
+    meeting_room_id: +id,
+    attendees: "",
+  });
+
   useEffect(() => {
     axios
       .get(`${API}/meeting-rooms/${id}`)
@@ -26,11 +34,29 @@ const MeetingRoomPage = () => {
       .get(`${API}/bookings`)
       .then((response) => {
         const data = response.data.payload;
-        const filteredList = data.filter(booking => booking.meeting_room_id === +id)
-        setBookings(filteredList)
+        const filteredList = data.filter(booking => booking.meeting_room_id === +id);
+        setBookings(filteredList);
     })
       .catch((err) => console.error(err));
   }, [id]);
+
+  const addBooking = () => {
+    axios
+      .post(`${API}/bookings`, newBooking)
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+  };
+
+  // const date = new Date("2023-11-08T01:12").toISOString() 
+
+  const handleTextChange = (e) => {
+    setNewBooking({ ...newBooking, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addBooking();
+  };
 
   return (
     <div className="MeetingRoomPage">
@@ -46,18 +72,18 @@ const MeetingRoomPage = () => {
       <div className="MeetingRoomPage-border"></div>
       <div className="MeetingRoomPage-form">
         <div>Book room:</div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>
-            Meeting Name: <input type="text" />
+            Meeting Name: <input type="text" id="meeting_name" value={newBooking.meeting_name} onChange={handleTextChange} />
           </label>
           <label>
-            Start: <input type="datetime-local" /><CalendarMonthIcon/>
+            Start: <input type="datetime-local" id="start_date" value={newBooking.start_date} onChange={handleTextChange}/><CalendarMonthIcon/>
           </label>
           <label>
-            End: <input type="datetime-local" /><CalendarMonthIcon/>
+            End: <input type="datetime-local" id="end_date" value={newBooking.end_date} onChange={handleTextChange}  /><CalendarMonthIcon/>
           </label>
           <label>
-            Attendees: <input type="text" />
+            Attendees: <input type="text" id="attendees" value={newBooking.attendees} onChange={handleTextChange} />
           </label>
           <button type="submit">Submit</button>
         </form>
