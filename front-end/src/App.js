@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar/NavBar";
 import MeetingRooms from "./components/MeetingRooms/MeetingRooms";
 import Bookings from "./components/Bookings/Bookings";
 import MeetingRoomPage from "./components/MeetingRooms/MeetingRoomPage/MeetingRoomPage";
+import BookingPage from "./components/Bookings/BookingPage/BookingPage";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/meeting-rooms" element={<MeetingRooms meetingRooms={meetingRooms} />} />
             <Route path="/bookings" element={<Bookings bookings={bookings} meetingRooms={meetingRooms} />} />
             <Route path="/meeting-rooms/:id" element={<MeetingRoomPage bookings={bookings} />} />
+            <Route path="/bookings/:id" element={<BookingPage meetingRooms={meetingRooms} />} />
           </Routes>
         </Container>
       </Router>

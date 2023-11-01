@@ -16,7 +16,7 @@ const MeetingRoomPage = ({ bookings }) => {
   const [meetingRoom, setMeetingRoom] = useState({});
   
   const bookingsCopy = [...bookings];
-  const filteredBookings = bookingsCopy.filter(booking => booking.meeting_room_id === +id)
+  const filteredBookings = bookingsCopy.filter(booking => booking.meeting_room_id === +id);
 
   const [newBooking, setNewBooking] = useState({
     meeting_name: "",
