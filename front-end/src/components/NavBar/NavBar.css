@@ -8,7 +8,7 @@
 .NavBar button{
    font-size: 23px;
    padding: 10px;
-   width: 20vw;
+   width: 30%;
    background-color: darkgrey;
    cursor: pointer;
 }
