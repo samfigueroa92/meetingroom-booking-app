@@ -4,9 +4,10 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const API_URL = process.env.REACT_APP_API_URL;
 
-const NewRoom = () => {
+const NewRoom = ({ setFormSuccess }) => {
     const [newRoom, setNewRoom] = useState({
         name: "",
         capacity: "",
@@ -20,7 +21,7 @@ const NewRoom = () => {
           .post(`${API_URL}/meeting-rooms`, newRoom)
           .then((res) => {
             if(res.data.success){
-                alert("Room Created.");
+                setFormSuccess(true)
                 navigate("/");
             }else{
                 alert("Error: room could not be created.");

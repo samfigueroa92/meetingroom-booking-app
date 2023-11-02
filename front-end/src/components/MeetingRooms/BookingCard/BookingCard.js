@@ -1,14 +1,9 @@
 import "./BookingCard.css";
 
 import ScheduleIcon from '@mui/icons-material/Schedule';
+import { convertDate } from "../../../utils/dateConverter";
 
 const BookingCard = ({ booking }) => {
-
-    const convertDate = (string) => {
-        const date = new Date(string);
-        const newDate = date.toLocaleDateString();
-        return newDate;
-    };
 
     return (
         <div className="BookingCard">

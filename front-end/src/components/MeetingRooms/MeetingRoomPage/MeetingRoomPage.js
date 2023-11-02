@@ -48,8 +48,6 @@ const MeetingRoomPage = ({ bookings }) => {
       .catch((err) => console.error(err));
   };
 
-  // const date = new Date("2023-11-08T01:12").toISOString() 
-
   const handleTextChange = (e) => {
     setNewBooking({ ...newBooking, [e.target.id]: e.target.value });
   };
