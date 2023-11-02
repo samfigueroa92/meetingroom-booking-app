@@ -45,9 +45,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home meetingRooms={meetingRooms} />} />
             <Route path="/meeting-rooms" element={<MeetingRooms meetingRooms={meetingRooms} />} />
-            <Route path="/meeting-rooms/new" element={<NewRoom setFormSuccess={setFormSuccess} />} />
+            <Route path="/meeting-rooms/new" element={<NewRoom setFormSuccess={setFormSuccess} setError={setError} setSuccess={setSuccess} />} />
             <Route path="/bookings" element={<Bookings bookings={bookings} meetingRooms={meetingRooms} />} />
-            <Route path="/meeting-rooms/:id" element={<MeetingRoomPage bookings={bookings} />} />
+            <Route path="/meeting-rooms/:id" element={<MeetingRoomPage bookings={bookings} setFormSuccess={setFormSuccess} setError={setError} setSuccess={setSuccess} />} />
             <Route path="/bookings/:id" element={<BookingPage meetingRooms={meetingRooms} setFormSuccess={setFormSuccess} setError={setError} setSuccess={setSuccess} />} />
           </Routes>
         </Container>

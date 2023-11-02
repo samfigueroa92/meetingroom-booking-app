@@ -11,7 +11,7 @@ import BookingCard from "../BookingCard/BookingCard";
 
 const API = process.env.REACT_APP_API_URL;
 
-const MeetingRoomPage = ({ bookings }) => {
+const MeetingRoomPage = ({ bookings, setError, setSuccess, setFormSuccess }) => {
   const { id } = useParams();
   const [meetingRoom, setMeetingRoom] = useState({});
   const navigate = useNavigate();
@@ -39,10 +39,12 @@ const MeetingRoomPage = ({ bookings }) => {
       .post(`${API}/bookings`, newBooking)
       .then((res) => {
         if(res.data.success){
-          alert("Booking Created.");
+          setSuccess("Success! Your booking has been created.")
+          setFormSuccess(true);
           navigate("/");
       }else{
-          alert("Error: booking could not be created.");
+          setError("Error. Booking could not be created.")
+          setFormSuccess(true);
       }
       })
       .catch((err) => console.error(err));
@@ -70,16 +72,19 @@ const MeetingRoomPage = ({ bookings }) => {
       </div>
       <div className="MeetingRoomPage-border"></div>
       <div className="MeetingRoomPage-form">
-        <div>Book room:</div>
+        <div>Book room:
+          <br/>
+          <span>* All fields are required</span>
+        </div>
         <form onSubmit={handleSubmit}>
           <label>
-            Meeting Name: <input type="text" id="meeting_name" value={newBooking.meeting_name} onChange={handleTextChange} />
+            * Meeting Name: <input type="text" id="meeting_name" value={newBooking.meeting_name} onChange={handleTextChange} required />
           </label>
           <label>
-            Start: <input type="datetime-local" id="start_date" value={newBooking.start_date} onChange={handleTextChange}/><CalendarMonthIcon/>
+            * Start: <input type="datetime-local" id="start_date" value={newBooking.start_date} onChange={handleTextChange} required/><CalendarMonthIcon/>
           </label>
           <label>
-            End: <input type="datetime-local" id="end_date" value={newBooking.end_date} onChange={handleTextChange}  /><CalendarMonthIcon/>
+            * End: <input type="datetime-local" id="end_date" value={newBooking.end_date} onChange={handleTextChange} required /><CalendarMonthIcon/>
           </label>
           <label>
             Attendees: <input type="text" id="attendees" value={newBooking.attendees} onChange={handleTextChange} />
