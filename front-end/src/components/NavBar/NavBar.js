@@ -12,15 +12,11 @@ const NavBar = () => {
         <a href="/meeting-rooms">Meeting Rooms</a>
       </button>
       <button className="NavBar-bookings">
-        <a href="/bookings"> 
-        Bookings
-        </a>
-        </button>
+        <a href="/bookings">Bookings</a>
+      </button>
       <button className="NavBar-new">
-        <a href="/meeting-rooms/new">
-        New Room
-        </a>
-        </button>
+        <a href="/meeting-rooms/new">New Room</a>
+      </button>
     </div>
   );
 };

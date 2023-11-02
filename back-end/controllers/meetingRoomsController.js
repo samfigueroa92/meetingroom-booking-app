@@ -9,7 +9,6 @@ const {
 
 meetingRooms.get('/', async (req, res) => {
     const allMeetingRooms = await getAllMeetingRooms();
-
     if(allMeetingRooms[0]){
         res.status(200).json({ payload: allMeetingRooms, success: true });
     }else{
