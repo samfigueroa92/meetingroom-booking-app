@@ -11,6 +11,13 @@
     padding: 10px;
 }
 
+.MeetingRoomPage-form span{
+    font-size: 15px;
+    font-weight: 400;
+    font-style: italic;
+    color: red;
+}
+
 .MeetingRoomPage_header-name{
     font-size: 30px;
 }

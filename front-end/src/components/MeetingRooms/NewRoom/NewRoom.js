@@ -42,17 +42,21 @@ const NewRoom = ({ setFormSuccess, setError, setSuccess }) => {
 
     return (
         <div className="NewRoom">
-            <div className="NewRoom-header">Create a Room</div>
+            <div className="NewRoom-header">
+                Create a Room
+                <br/>
+                <span>* All fields required</span>
+                </div>
             <div className="NewRoom-form">
                 <form onSubmit={handleSubmit}>
                     <label>
-                        Room Name: <input type="text" id="name" value={newRoom.name} onChange={handleTextChange} />
+                        * Room Name: <input type="text" id="name" value={newRoom.name} onChange={handleTextChange} required />
                     </label>
                     <label>
-                        Floor: <input type="text" id="floor" value={newRoom.floor} onChange={handleTextChange} />
+                        * Floor: <input type="text" id="floor" value={newRoom.floor} onChange={handleTextChange} required />
                     </label>
                     <label>
-                        Capacity: <input type="number" id="capacity" value={newRoom.capacity} onChange={handleTextChange} />
+                        * Capacity: <input type="number" id="capacity" value={newRoom.capacity} onChange={handleTextChange} required />
                     </label>
                     <button type="submit">Submit</button>
                 </form>
