@@ -2,8 +2,9 @@ import "./Toast.css";
 
 import CloseIcon from '@mui/icons-material/Close';
 import CheckIcon from '@mui/icons-material/Check';
+import ErrorIcon from '@mui/icons-material/Error';
 
-const Toast = ({ setFormSuccess, formSuccess }) => {
+const Toast = ({ setFormSuccess, formSuccess, success, error }) => {
 
   return formSuccess ? (
     <div className="Toast" onClick={() => setFormSuccess(false)}>
@@ -13,7 +14,7 @@ const Toast = ({ setFormSuccess, formSuccess }) => {
             <CloseIcon />
           </div>
         </div>
-        <div className="Toast-content-text"> <CheckIcon />Success! Your new room has been created.</div>
+        <div className="Toast-content-text">{success ? <CheckIcon /> : <ErrorIcon />}{success ? success : error}</div>
       </div>
     </div>
   ) : null;

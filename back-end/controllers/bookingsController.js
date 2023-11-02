@@ -29,7 +29,6 @@ bookings.get('/:id', async (req, res) => {
 
 bookings.post('/', async (req, res) => {
     const { body } = req;
-
     try {
         const createdBooking = await createBooking(body);
         if(createdBooking.id){

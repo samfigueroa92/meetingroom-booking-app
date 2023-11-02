@@ -22,7 +22,7 @@ const App = () => {
   const [formSuccess, setFormSuccess] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     axios
@@ -35,20 +35,20 @@ const App = () => {
       .then((res) => setBookings(res.data.payload))
       .catch((err) => console.error(err));
   }, []);
-  
+
   return (
     <div className="App">
       <Router>
         <Container>
             <NavBar />
-            <Toast setFormSuccess={setFormSuccess} formSuccess={formSuccess} />
+            <Toast setFormSuccess={setFormSuccess} formSuccess={formSuccess} success={success} error={error} />
           <Routes>
             <Route path="/" element={<Home meetingRooms={meetingRooms} />} />
             <Route path="/meeting-rooms" element={<MeetingRooms meetingRooms={meetingRooms} />} />
             <Route path="/meeting-rooms/new" element={<NewRoom setFormSuccess={setFormSuccess} />} />
             <Route path="/bookings" element={<Bookings bookings={bookings} meetingRooms={meetingRooms} />} />
             <Route path="/meeting-rooms/:id" element={<MeetingRoomPage bookings={bookings} />} />
-            <Route path="/bookings/:id" element={<BookingPage meetingRooms={meetingRooms} />} />
+            <Route path="/bookings/:id" element={<BookingPage meetingRooms={meetingRooms} setFormSuccess={setFormSuccess} setError={setError} setSuccess={setSuccess} />} />
           </Routes>
         </Container>
       </Router>
