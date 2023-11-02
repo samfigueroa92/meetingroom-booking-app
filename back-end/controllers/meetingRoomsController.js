@@ -8,7 +8,9 @@ const {
 } = require('../queries/meetingRooms');
 
 meetingRooms.get('/', async (req, res) => {
+    console.log("hi")
     const allMeetingRooms = await getAllMeetingRooms();
+    console.log(allMeetingRooms)
     if(allMeetingRooms[0]){
         res.status(200).json({ payload: allMeetingRooms, success: true });
     }else{
