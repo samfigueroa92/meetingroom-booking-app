@@ -1,0 +1,33 @@
+.NewRoom{
+    width: 70%;
+    margin: 0 auto;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.NewRoom-header{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.NewRoom-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.NewRoom-form input{
+    margin: 5px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+.NewRoom-form button{
+    width: 25%;
+    margin: 10px;
+    font-size: 18px;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 5px;
+}

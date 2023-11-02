@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import BusinessIcon from "@mui/icons-material/Business";
 import GroupIcon from "@mui/icons-material/Group";
@@ -14,6 +14,7 @@ const API = process.env.REACT_APP_API_URL;
 const MeetingRoomPage = ({ bookings }) => {
   const { id } = useParams();
   const [meetingRoom, setMeetingRoom] = useState({});
+  const navigate = useNavigate();
   
   const bookingsCopy = [...bookings];
   const filteredBookings = bookingsCopy.filter(booking => booking.meeting_room_id === +id);
@@ -36,7 +37,14 @@ const MeetingRoomPage = ({ bookings }) => {
   const addBooking = () => {
     axios
       .post(`${API}/bookings`, newBooking)
-      .then((res) => console.log(res))
+      .then((res) => {
+        if(res.data.success){
+          alert("Booking Created.");
+          navigate("/");
+      }else{
+          alert("Error: booking could not be created.");
+      }
+      })
       .catch((err) => console.error(err));
   };
 

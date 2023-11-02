@@ -11,6 +11,7 @@ import MeetingRooms from "./components/MeetingRooms/MeetingRooms";
 import Bookings from "./components/Bookings/Bookings";
 import MeetingRoomPage from "./components/MeetingRooms/MeetingRoomPage/MeetingRoomPage";
 import BookingPage from "./components/Bookings/BookingPage/BookingPage";
+import NewRoom from "./components/MeetingRooms/NewRoom/NewRoom";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -38,6 +39,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home meetingRooms={meetingRooms} />} />
             <Route path="/meeting-rooms" element={<MeetingRooms meetingRooms={meetingRooms} />} />
+            <Route path="/meeting-rooms/new" element={<NewRoom />} />
             <Route path="/bookings" element={<Bookings bookings={bookings} meetingRooms={meetingRooms} />} />
             <Route path="/meeting-rooms/:id" element={<MeetingRoomPage bookings={bookings} />} />
             <Route path="/bookings/:id" element={<BookingPage meetingRooms={meetingRooms} />} />
