@@ -29,11 +29,9 @@ bookings.get('/:id', async (req, res) => {
 
 bookings.post('/', async (req, res) => {
     const { body } = req;
-    // console.log(body)
 
     try {
         const createdBooking = await createBooking(body);
-        //   console.log(createdBooking)
         if(createdBooking.id){
             res.status(200).json({ payload: createdBooking, success: true });
         }else{

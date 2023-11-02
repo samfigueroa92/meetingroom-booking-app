@@ -2,7 +2,7 @@ const db = require('../db/dbConfig');
 
 const getAllMeetingRooms = async () => {
     try {
-        const allMeetingRooms = await db.any('SELECT * FROM meetingRooms ORDER BY id ASC;');
+        const allMeetingRooms = await db.any('SELECT * FROM meetingRooms');
         return allMeetingRooms;
     } catch(err) {
         return err;
@@ -20,10 +20,10 @@ const getMeetingRoom = async (id) => {
 };
 
 const createMeetingRoom = async (meetingRoom) => {
-    const { id, name, capacity, floor, available } = meetingRoom;
+    const { name, capacity, floor } = meetingRoom;
 
     try {
-        const newMeetingRoom = await db.one('INSERT INTO meetingRooms (id, name, capacity, floor, available) VALUES ($1, $2, $3, $4, $5) RETURNING *', [id, name, capacity, floor, available]);
+        const newMeetingRoom = await db.one('INSERT INTO meetingRooms (name, capacity, floor) VALUES ($1, $2, $3) RETURNING *', [name, capacity, floor]);
         return newMeetingRoom;
     } catch (err) {
         return err;

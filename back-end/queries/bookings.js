@@ -2,7 +2,7 @@ const db = require('../db/dbConfig');
 
 const getAllBookings = async () => {
     try {
-        const allBookings = await db.any('SELECT * FROM bookings ORDER BY id ASC;');
+        const allBookings = await db.any('SELECT * FROM bookings');
         return allBookings;
     } catch (err){
         return err;

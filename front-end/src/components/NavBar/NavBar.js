@@ -16,7 +16,11 @@ const NavBar = () => {
         Bookings
         </a>
         </button>
-      <button className="NavBar-new">New Room</button>
+      <button className="NavBar-new">
+        <a href="/meeting-rooms/new">
+        New Room
+        </a>
+        </button>
     </div>
   );
 };
