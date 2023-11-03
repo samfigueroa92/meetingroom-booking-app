@@ -11,3 +11,16 @@
     font-size: 23px;
     font-weight: 500;
 }
+
+.BookingCard a{
+    text-decoration: none;
+    color: black;
+}
+
+.BookingCard a:visited{
+    color: black;
+}
+
+.BookingCard a:link{
+    color: black;
+}
