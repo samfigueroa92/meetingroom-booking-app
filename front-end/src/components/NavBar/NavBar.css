@@ -20,6 +20,10 @@
 .NavBar a:visited{
    color: black;
 }
+.NavBar a:link{
+   color: black;
+}
+
 
 .NavBar button:hover{
    background-color: white;

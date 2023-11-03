@@ -50,14 +50,18 @@ const NewRoom = ({ setFormSuccess, setError, setSuccess }) => {
             <div className="NewRoom-form">
                 <form onSubmit={handleSubmit}>
                     <label>
-                        * Room Name: <input type="text" id="name" value={newRoom.name} onChange={handleTextChange} required />
+                    * Room Name:
                     </label>
+                         <input type="text" id="name" value={newRoom.name} onChange={handleTextChange} required />
                     <label>
-                        * Floor: <input type="text" id="floor" value={newRoom.floor} onChange={handleTextChange} required />
+                    * Floor:
                     </label>
+                        
+                         <input type="text" id="floor" value={newRoom.floor} onChange={handleTextChange} required />
                     <label>
-                        * Capacity: <input type="number" id="capacity" value={newRoom.capacity} onChange={handleTextChange} required />
+                    * Capacity:
                     </label>
+                         <input type="number" id="capacity" value={newRoom.capacity} onChange={handleTextChange} required />
                     <button type="submit">Submit</button>
                 </form>
 

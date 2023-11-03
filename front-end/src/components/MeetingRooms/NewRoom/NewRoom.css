@@ -1,13 +1,12 @@
 .NewRoom{
-    width: 70%;
+    width: 80%;
+    height: 50vh;
     margin: 0 auto;
-    border: 2px solid gray;
-    border-radius: 5px;
     padding: 15px;
 }
 
 .NewRoom-header{
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -22,18 +21,24 @@
 .NewRoom-form form{
     display: flex;
     flex-direction: column;
+    border-bottom: 2px solid gray;
+}
+
+.NewRoom-form label{
+    font-size: 20px;
 }
 
 .NewRoom-form input{
-    margin: 5px;
+    margin-bottom: 25px;
     border: 2px solid gray;
     border-radius: 5px;
+    font-size: 18px;
 }
 
 .NewRoom-form button{
     width: 25%;
     margin: 10px;
-    font-size: 18px;
+    font-size: 20px;
     background-color: white;
     border: 2px solid gray;
     border-radius: 5px;
