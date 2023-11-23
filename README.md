@@ -1,8 +1,9 @@
-# Blackstone Meeting Room Booking Application
+# Meeting Room Booking Application
 
 This is a simple meeting room booking application that allows users to book, cancel, and create new meeting rooms. It's built using a combination of front-end and back-end technologies to provide a smooth and user-friendly experience.
 
 [Netlify Deployed Link](https://blackstonebookings.netlify.app/)
+
 [Render Deployed Link](https://booking-app-91on.onrender.com)
 
 ## Contact
